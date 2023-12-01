@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   
-  <title>我的技术与生活——Hello World | Hexo</title>
+  <title>我的技术与生活——Openstack配置控制节点与计算节点 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="shortcut icon" href="/imgs/shortcut-icon.ico" type="image/x-icon">
   <link rel="stylesheet" href="/css/public.css" />
@@ -16,7 +16,7 @@
 
   <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
   <script>
-    document.title = `我的技术与生活——Hello World`
+    document.title = `我的技术与生活——Openstack配置控制节点与计算节点`
   </script>
 <meta name="generator" content="Hexo 7.0.0"></head>
 
@@ -344,7 +344,7 @@
 
 <div class="article-container">
   <div class="article">
-    <h1 class="article-title">Hello World</h1>
+    <h1 class="article-title">Openstack配置控制节点与计算节点</h1>
     <div class="article-info">
       <div class="article-info--item">
         <div class="article-info--info">
@@ -360,31 +360,38 @@
             
           </div>
           
-          <p class="article-info--date">日期：2023-11-30 21:36:13</p>
+          <p class="article-info--date">日期：2023-12-01 18:33:00</p>
         </div>
         <img src="/imgs/default-cover.webp" alt="" class="article-cover">
       </div>
     </div>
     <article class="article-content markdown-body">
-      <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+      <h2 id="配置前需将VMware网络设置中VMnet8设置你将要配置的网段"><a href="#配置前需将VMware网络设置中VMnet8设置你将要配置的网段" class="headerlink" title="配置前需将VMware网络设置中VMnet8设置你将要配置的网段"></a>配置前需将VMware网络设置中VMnet8设置你将要配置的网段</h2><h2 id="配置网络，主机名"><a href="#配置网络，主机名" class="headerlink" title="配置网络，主机名"></a>配置网络，主机名</h2><p> <strong>修改和添加&#x2F;etc&#x2F;sysconfig&#x2F;network-scripts&#x2F;ifcfg-(看具体网口)</strong></p>
+<h2 id="Controller节点"><a href="#Controller节点" class="headerlink" title="Controller节点"></a>Controller节点</h2><h3 id="配置网络"><a href="#配置网络" class="headerlink" title="配置网络"></a>配置网络</h3><h4 id="enp8s0-192-168-100-10"><a href="#enp8s0-192-168-100-10" class="headerlink" title="enp8s0: 192.168.100.10"></a>enp8s0: 192.168.100.10</h4><figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">第一张网卡</span><br><span class="line"><span class="attr">DEVICE</span>=enp8s0</span><br><span class="line"><span class="attr">TYPE</span>=Ethernet</span><br><span class="line"><span class="attr">ONBOOT</span>=<span class="literal">yes</span></span><br><span class="line"><span class="attr">NM_CONTROLLED</span>=<span class="literal">no</span></span><br><span class="line"><span class="attr">BOOTPROTO</span>=static</span><br><span class="line"><span class="attr">IPADDR</span>=<span class="number">192.168</span>.<span class="number">100.10</span></span><br><span class="line"><span class="attr">PREFIX</span>=<span class="number">24</span></span><br><span class="line"><span class="attr">GATEWAY</span>=<span class="number">192.168</span>.<span class="number">100.1</span></span><br><span class="line">第二张网卡</span><br><span class="line"><span class="attr">DEVICE</span>=enp9s0</span><br><span class="line"><span class="attr">TYPE</span>=Ethernet</span><br><span class="line"><span class="attr">ONBOOT</span>=<span class="literal">yes</span></span><br><span class="line"><span class="attr">NM_CONTROLLED</span>=<span class="literal">no</span></span><br><span class="line"><span class="attr">BOOTPROTO</span>=static</span><br><span class="line"><span class="attr">IPADDR</span>=<span class="number">192.168</span>.<span class="number">200.10</span></span><br><span class="line"><span class="attr">PREFIX</span>=<span class="number">24</span></span><br></pre></td></tr></table></figure>
+<h3 id="配置主机名"><a href="#配置主机名" class="headerlink" title="配置主机名"></a>配置主机名</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hostnamectl set-hostname controller</span><br><span class="line">systemctl reboot</span><br></pre></td></tr></table></figure>
+<h3 id="Compute节点"><a href="#Compute节点" class="headerlink" title="Compute节点"></a>Compute节点</h3><figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">第一张网卡</span><br><span class="line"><span class="attr">DEVICE</span>=enp8s0</span><br><span class="line"><span class="attr">TYPE</span>=Ethernet</span><br><span class="line"><span class="attr">ONBOOT</span>=<span class="literal">yes</span></span><br><span class="line"><span class="attr">NM_CONTROLLED</span>=<span class="literal">no</span></span><br><span class="line"><span class="attr">BOOTPROTO</span>=static</span><br><span class="line"><span class="attr">IPADDR</span>=<span class="number">192.168</span>.<span class="number">100.20</span></span><br><span class="line"><span class="attr">PREFIX</span>=<span class="number">24</span></span><br><span class="line"><span class="attr">GATEWAY</span>=<span class="number">192.168</span>.<span class="number">100.1</span></span><br><span class="line">第二张网卡</span><br><span class="line"><span class="attr">DEVICE</span>=enp9s0</span><br><span class="line"><span class="attr">TYPE</span>=Ethernet</span><br><span class="line"><span class="attr">ONBOOT</span>=<span class="literal">yes</span></span><br><span class="line"><span class="attr">NM_CONTROLLED</span>=<span class="literal">no</span></span><br><span class="line"><span class="attr">BOOTPROTO</span>=static</span><br><span class="line"><span class="attr">IPADDR</span>=<span class="number">192.168</span>.<span class="number">200.20</span></span><br><span class="line"><span class="attr">PREFIX</span>=<span class="number">24</span></span><br></pre></td></tr></table></figure>
+<h3 id="配置主机名-1"><a href="#配置主机名-1" class="headerlink" title="配置主机名"></a>配置主机名</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hostnamectl set-hostname compute</span><br><span class="line">systemctl reboot</span><br></pre></td></tr></table></figure>
+<h2 id="配置yum源"><a href="#配置yum源" class="headerlink" title="配置yum源"></a>配置yum源</h2><h2 id="先将俩台虚拟机的yum源备份"><a href="#先将俩台虚拟机的yum源备份" class="headerlink" title="先将俩台虚拟机的yum源备份"></a>先将俩台虚拟机的yum源备份</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">mv</span> /etc/yum.repos.d/* /opt/</span><br></pre></td></tr></table></figure>
+<h2 id="创建repo文件"><a href="#创建repo文件" class="headerlink" title="创建repo文件"></a>创建repo文件</h2><p><strong>Controller</strong><br><strong>在 &#x2F;etc&#x2F;yum.repos.d 创建 centos.repo 源文件：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">[centos]</span><br><span class="line">name=centos</span><br><span class="line">baseurl=file:///opt/centos</span><br><span class="line">gpgcheck=0</span><br><span class="line">enabled=1</span><br><span class="line"></span><br><span class="line">[iaas]</span><br><span class="line">name=iaas</span><br><span class="line">baseurl=file:///opt/iaas-repo</span><br><span class="line">gpgcheck=0</span><br><span class="line">enabled=1</span><br></pre></td></tr></table></figure>
+<p>Compute</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">[centos]</span><br><span class="line">name=centos</span><br><span class="line">baseurl=ftp://192.168.100.10/centos</span><br><span class="line">gpgcheck=0</span><br><span class="line">enabled=1</span><br><span class="line"></span><br><span class="line">[iaas]</span><br><span class="line">name=iaas</span><br><span class="line">baseurl=ftp://192.168.100.10/iaas-repo</span><br><span class="line">gpgcheck=0</span><br><span class="line">enabled=1</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="挂载ISO文件"><a href="#挂载ISO文件" class="headerlink" title="挂载ISO文件"></a>挂载ISO文件</h2><p><strong>挂载CentOS-7-x86_64-DVD-1804.iso</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">mount -o loop CentOS-7-x86_64-DVD-1804.iso /mnt/</span><br><span class="line"><span class="built_in">mkdir</span> /opt/centos</span><br><span class="line"><span class="built_in">cp</span> -rvf /mnt/* /opt/centos/</span><br><span class="line">umount /mnt/</span><br></pre></td></tr></table></figure>
+<p><strong>挂载chinaskills_cloud_iaas.iso</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mount -o loop chinaskills_cloud_iaas.iso /mnt/</span><br><span class="line"><span class="built_in">cp</span> -rvf /mnt/* /opt/</span><br><span class="line">umount /mnt/</span><br></pre></td></tr></table></figure>
+<h3 id="搭建FTP服务器，开启并设置自启"><a href="#搭建FTP服务器，开启并设置自启" class="headerlink" title="搭建FTP服务器，开启并设置自启"></a>搭建FTP服务器，开启并设置自启</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">yum install vsftpd -y</span><br><span class="line">vi /etc/vsftpd/vsftpd.conf</span><br><span class="line">添加 anon_root=/opt/</span><br><span class="line">保存退出</span><br><span class="line">systemctl start vsftpd</span><br><span class="line">systemctl <span class="built_in">enable</span> vsftpd</span><br></pre></td></tr></table></figure>
+<h2 id="配置防火墙和SELinux"><a href="#配置防火墙和SELinux" class="headerlink" title="配置防火墙和SELinux"></a>配置防火墙和SELinux</h2><p><strong>Controller&#x2F;Compute</strong><br><strong>编辑SELinux文件：</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">vi /etc/selinux/config</span><br><span class="line">SELINUX=permissive</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-
+<p><strong>关闭防火墙并设置开机不自启：</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">systemctl stop firewalld.service</span><br><span class="line">systemctl <span class="built_in">disable</span> firewalld.service</span><br><span class="line">yum remove -y NetworkManager firewalld</span><br><span class="line">yum -y install iptables-services</span><br><span class="line">systemctl <span class="built_in">enable</span> iptables</span><br><span class="line">systemctl restart iptables</span><br><span class="line">iptables -F</span><br><span class="line">iptables -X</span><br><span class="line">iptables -Z</span><br><span class="line">service iptables save</span><br></pre></td></tr></table></figure>
+<h2 id="清除缓存，验证Yum源"><a href="#清除缓存，验证Yum源" class="headerlink" title="清除缓存，验证Yum源"></a>清除缓存，验证Yum源</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># yum clean all</span></span><br><span class="line"><span class="comment"># yum list</span></span><br></pre></td></tr></table></figure>
     </article>
     
     <div class="read-nums">
       <!-- id 将作为查询条件 -->
-      <span id="2023/11/30/hello-world/" class="leancloud_visitors" data-flag-title="Your Article Title">
+      <span id="2023/12/01/Openstack1/" class="leancloud_visitors" data-flag-title="Your Article Title">
         <em class="post-meta-item-text">浏览量</em>
         <i class="leancloud-visitors-count"></i>
       </span>
@@ -400,16 +407,16 @@
     <div class="article-catelogue--wrapper">
       <div class="catelogue catelogue-1">
         <h3>目录</h3>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Quick-Start"><span class="toc-number">1.</span> <span class="toc-text">Quick Start</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Create-a-new-post"><span class="toc-number">1.1.</span> <span class="toc-text">Create a new post</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Run-server"><span class="toc-number">1.2.</span> <span class="toc-text">Run server</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Generate-static-files"><span class="toc-number">1.3.</span> <span class="toc-text">Generate static files</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Deploy-to-remote-sites"><span class="toc-number">1.4.</span> <span class="toc-text">Deploy to remote sites</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE%E5%89%8D%E9%9C%80%E5%B0%86VMware%E7%BD%91%E7%BB%9C%E8%AE%BE%E7%BD%AE%E4%B8%ADVMnet8%E8%AE%BE%E7%BD%AE%E4%BD%A0%E5%B0%86%E8%A6%81%E9%85%8D%E7%BD%AE%E7%9A%84%E7%BD%91%E6%AE%B5"><span class="toc-number">1.</span> <span class="toc-text">配置前需将VMware网络设置中VMnet8设置你将要配置的网段</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE%E7%BD%91%E7%BB%9C%EF%BC%8C%E4%B8%BB%E6%9C%BA%E5%90%8D"><span class="toc-number">2.</span> <span class="toc-text">配置网络，主机名</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Controller%E8%8A%82%E7%82%B9"><span class="toc-number">3.</span> <span class="toc-text">Controller节点</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE%E7%BD%91%E7%BB%9C"><span class="toc-number">3.1.</span> <span class="toc-text">配置网络</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#enp8s0-192-168-100-10"><span class="toc-number">3.1.1.</span> <span class="toc-text">enp8s0: 192.168.100.10</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE%E4%B8%BB%E6%9C%BA%E5%90%8D"><span class="toc-number">3.2.</span> <span class="toc-text">配置主机名</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Compute%E8%8A%82%E7%82%B9"><span class="toc-number">3.3.</span> <span class="toc-text">Compute节点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE%E4%B8%BB%E6%9C%BA%E5%90%8D-1"><span class="toc-number">3.4.</span> <span class="toc-text">配置主机名</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%85%8D%E7%BD%AEyum%E6%BA%90"><span class="toc-number">4.</span> <span class="toc-text">配置yum源</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%88%E5%B0%86%E4%BF%A9%E5%8F%B0%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%9A%84yum%E6%BA%90%E5%A4%87%E4%BB%BD"><span class="toc-number">5.</span> <span class="toc-text">先将俩台虚拟机的yum源备份</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%9B%E5%BB%BArepo%E6%96%87%E4%BB%B6"><span class="toc-number">6.</span> <span class="toc-text">创建repo文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8C%82%E8%BD%BDISO%E6%96%87%E4%BB%B6"><span class="toc-number">7.</span> <span class="toc-text">挂载ISO文件</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%90%AD%E5%BB%BAFTP%E6%9C%8D%E5%8A%A1%E5%99%A8%EF%BC%8C%E5%BC%80%E5%90%AF%E5%B9%B6%E8%AE%BE%E7%BD%AE%E8%87%AA%E5%90%AF"><span class="toc-number">7.1.</span> <span class="toc-text">搭建FTP服务器，开启并设置自启</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE%E9%98%B2%E7%81%AB%E5%A2%99%E5%92%8CSELinux"><span class="toc-number">8.</span> <span class="toc-text">配置防火墙和SELinux</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B8%85%E9%99%A4%E7%BC%93%E5%AD%98%EF%BC%8C%E9%AA%8C%E8%AF%81Yum%E6%BA%90"><span class="toc-number">9.</span> <span class="toc-text">清除缓存，验证Yum源</span></a></li></ol>
       </div>
       
         <div class="catelogue catelogue-2">
+           
           
             <p>
-              <span>上一篇：</span>
+              <span>下一篇</span>
               <a href="/2023/12/01/Openstack/">Openstack</a>
             </p>
-           
           
         </div>
       
@@ -430,7 +437,7 @@
     recordIP: config.recordIP,
     visitor: config.visitor,
     enableQQ: config.enableQQ,
-    path: '2023/11/30/hello-world/'
+    path: '2023/12/01/Openstack1/'
   })
 </script>
 
