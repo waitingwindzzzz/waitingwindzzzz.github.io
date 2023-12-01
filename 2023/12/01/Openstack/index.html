@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   
-  <title>我的技术与生活——小站首页 | Hexo</title>
+  <title>我的技术与生活——Openstack | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="shortcut icon" href="/imgs/shortcut-icon.ico" type="image/x-icon">
   <link rel="stylesheet" href="/css/public.css" />
@@ -16,7 +16,7 @@
 
   <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
   <script>
-    document.title = `我的技术与生活——小站首页`
+    document.title = `我的技术与生活——Openstack`
   </script>
 <meta name="generator" content="Hexo 7.0.0"></head>
 
@@ -337,111 +337,136 @@
     </div>
   </div>
 </div></div>
-      <div id="main-container" class="main-container"><link rel="stylesheet" href="/css/partial/archive.css" />
+      <div id="main-container" class="main-container">
 
 
+  <link rel="stylesheet" href="/css/partial/article.css" />
 
-    <link rel="stylesheet" href="/css/partial/index.css" />
-
-
-
-<div class="index">
-  <div class="index-left">
-    
-      <div class="index-article">
-        <!-- <img class="index-article--cover" src="/imgs/default-cover.webp" alt=""> -->
-        <div class="index-article--box">
-          <img class="index-article--cover" data-cover="imgs/default-cover.webp" alt="Hello World" />
-        </div>
-        <div class="index-article--content">
-          <a href="/2023/11/30/hello-world/">Hello World </a>
-          <div>
-            
+<div class="article-container">
+  <div class="article">
+    <h1 class="article-title">Openstack</h1>
+    <div class="article-info">
+      <div class="article-info--item">
+        <div class="article-info--info">
+          
+          <div class="article-info--categories">
+            <span>分类：</span>
             
           </div>
-          <div class="bg"></div>
+          
+          
+          <div class="article-info--tags">
+            <span>标签：</span>
+            
+          </div>
+          
+          <p class="article-info--date">日期：2023-12-01 16:54:57</p>
         </div>
+        <img src="/imgs/default-cover.webp" alt="" class="article-cover">
       </div>
+    </div>
+    <article class="article-content markdown-body">
+      <h2 id="OpenStack-简介"><a href="#OpenStack-简介" class="headerlink" title="OpenStack 简介"></a>OpenStack 简介</h2><p> OpenStack 是一个开源的云计算平台，旨在提供可扩展性、弹性和高性能的云服务。它由一系列相互关联的项目组成，每个项目都负责不同的云计算服务。</p>
+<h2 id="核心组件"><a href="#核心组件" class="headerlink" title="核心组件"></a>核心组件</h2><ol>
+<li><strong>Nova</strong>：计算服务，用于管理和调度虚拟机实例。</li>
+<li><strong>Swift</strong>：对象存储服务，提供可扩展的对象存储平台。</li>
+<li><strong>Cinder</strong>：块存储服务，允许虚拟机访问持久块存储。</li>
+<li><strong>Neutron</strong>：网络服务，负责提供云环境中的网络连接。</li>
+<li><strong>Horizon</strong>：Web界面，用于管理和监控OpenStack环境。</li>
+</ol>
+<h2 id="架构"><a href="#架构" class="headerlink" title="架构"></a>架构</h2><p> OpenStack采用模块化的架构，允许用户根据需要选择安装和配置的组件。主要架构包括：</p>
+<ul>
+<li><strong>Controller 节点</strong>：负责管理和协调各种服务的控制器。</li>
+<li><strong>Compute 节点</strong>：运行虚拟机实例的计算节点。</li>
+<li><strong>Storage 节点</strong>：提供对象存储和块存储服务的存储节点。</li>
+<li><strong>Network 节点</strong>：负责处理网络服务的网络节点。</li>
+</ul>
+<h2 id="安装和配置"><a href="#安装和配置" class="headerlink" title="安装和配置"></a>安装和配置</h2><p> 安装OpenStack需要仔细的规划和配置。以下是一个简单的安装步骤：</p>
+<ol>
+<li><strong>安装操作系统</strong>：在所有节点上安装支持OpenStack的操作系统，如Ubuntu Server。</li>
+<li><strong>配置网络</strong>：配置节点之间的网络连接，确保它们可以相互通信。</li>
+<li><strong>安装OpenStack软件</strong>：使用相应的包管理工具安装OpenStack的核心软件。</li>
+<li><strong>配置服务</strong>：编辑配置文件，指定每个服务的配置参数。</li>
+<li><strong>启动服务</strong>：启动OpenStack服务并监视其状态。</li>
+</ol>
+<h2 id="参与开发"><a href="#参与开发" class="headerlink" title="参与开发"></a>参与开发</h2><p> OpenStack是一个开源项目，欢迎开发者参与贡献。如果您有兴趣，可以访问 <a target="_blank" rel="noopener" href="https://www.openstack.org/">OpenStack官方网站</a> 获取更多信息。</p>
+
+    </article>
+    
+    <div class="read-nums">
+      <!-- id 将作为查询条件 -->
+      <span id="2023/12/01/Openstack/" class="leancloud_visitors" data-flag-title="Your Article Title">
+        <em class="post-meta-item-text">浏览量</em>
+        <i class="leancloud-visitors-count"></i>
+      </span>
+    </div>
+    <div class="comments-intro">
+      <h2>评论区</h2>
+      <p>欢迎你留下宝贵的意见，昵称输入QQ号会显示QQ头像哦~</p>
+    </div>
+    <div id="vcomments" class="vcomments"></div>
     
   </div>
-  <div class="index-center">
-    
-  </div>
-  <div class="index-right">
-    <div class="index-right-wrapper">
+  <div class="article-catelogue">
+    <div class="article-catelogue--wrapper">
+      <div class="catelogue catelogue-1">
+        <h3>目录</h3>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#OpenStack-%E7%AE%80%E4%BB%8B"><span class="toc-number">1.</span> <span class="toc-text">OpenStack 简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A0%B8%E5%BF%83%E7%BB%84%E4%BB%B6"><span class="toc-number">2.</span> <span class="toc-text">核心组件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9E%B6%E6%9E%84"><span class="toc-number">3.</span> <span class="toc-text">架构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85%E5%92%8C%E9%85%8D%E7%BD%AE"><span class="toc-number">4.</span> <span class="toc-text">安装和配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%82%E4%B8%8E%E5%BC%80%E5%8F%91"><span class="toc-number">5.</span> <span class="toc-text">参与开发</span></a></li></ol>
+      </div>
       
+        <div class="catelogue catelogue-2">
+           
+          
+            <p>
+              <span>下一篇</span>
+              <a href="/2023/11/30/hello-world/">Hello World</a>
+            </p>
+          
+        </div>
       
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/12/">2023年12月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/11/">2023年11月</a><span class="archive-list-count">1</span></li></ul>
     </div>
   </div>
 </div>
 
 
 <script>
-  var allImgBoxs = document.querySelectorAll('.index-article--box');
-  var windowHeight = window.innerHeight;
-  var boxs = Array.from(allImgBoxs);
-  var timer = null;
-  boxs.forEach((box, idx) => {
-    if (!window.loadImageSet || !window.loadImageSet.includes(idx)) {
-      box.classList.add('img-loading');
-    } else {
-      const imgDom = box.querySelector('img');
-      imgDom.src = imgDom.dataset.cover;
-    }
-  });
+  // var定义，避免pjax重新进来造成的重复声明错误
+  var config = JSON.parse('{"enable":true,"appId":"Pf8zCXGEH1qsprnWfikVVujL-gzGzoHsz","appKey":"qOqoiUHhH1TGtLRUYURkLRQX","placeholder":"请留下你宝贵的意见吧~","meta":["nick"],"recordIP":true,"visitor":true,"enableQQ":true}')
+  new Valine({
+    el: '#vcomments',
+    appId: config.appId,
+    appKey: config.appKey,
+    placeholder: config.placeholder,
+    meta: config.meta,
+    recordIP: config.recordIP,
+    visitor: config.visitor,
+    enableQQ: config.enableQQ,
+    path: '2023/12/01/Openstack/'
+  })
+</script>
 
-  function scrollFn() {
-    if (timer) {
-      return;
-    }
-    timer = setTimeout(() => {
-      loadImage();
-      timer = null;
-    }, 100)
-  }
 
-  setTimeout(() => {
-    loadImage();
-  }, 100);
-  if (!window.loadedImage) {
-    document.addEventListener('scroll', scrollFn);
-  }
-
-  function loadImage() {
-    const doc = document.documentElement;
-    const scrollTop = doc.scrollTop;
-    if (boxs.every(box => box.loadedImage)) {
-      document.removeEventListener('scroll', scrollFn);
-      window.loadedImage = 1;
-      return;
-    }
-    boxs.forEach((box, idx) => {
-      if (box.loadedImage) {
-        return;
-      }
-      if (box.getBoundingClientRect().top < windowHeight) {
-        const imgDom = box.querySelector('img');
-        imgDom.src = imgDom.dataset.cover;
-        // 图片成功加载
-        imgDom.onload = () => {
-          box.classList.remove('img-loading');
-          box.loadedImage = true;
-          if (!window.loadImageSet) {
-            window.loadImageSet = [];
-          }
-          window.loadImageSet.push(idx);
-        }
-        // 图片加载失败
-        imgDom.onerror = () => {
-          box.classList.remove('img-loading');
-          box.classList.add('img-error');
-          imgDom.src = '/imgs/404.png';
-        }
-      }
-    });
-  }
+<script>
+  $(document).on('pjax:complete', function() {
+    const tocs = document.querySelector('.toc')
+    const links = tocs ? tocs.querySelectorAll('a') : []
+    links.forEach(link => {
+      link.addEventListener('click', e => {
+        const href = decodeURIComponent(e.href)
+        href.search(/#(.*)/)
+        const id = RegExp.$1
+        const target = document.querySelector('#' + id)
+        const top = target.offsetTop
+        document.documentElement.scrollTo({
+          top: top - 100,
+          behavior: 'smooth'
+        })
+        e.preventDefault()
+      })
+    })
+  })
 </script> 
+
 </div>
       <div class="main-right-wrapper"><div class="main-right">
   <div class="main-right--board">
