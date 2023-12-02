@@ -175,7 +175,7 @@
   const ipt = document.querySelector('#search-input')
   const btn = document.querySelector('#search-btn')
   const layer = document.querySelector('#search-layer')
-  const posts = JSON.parse(`[{"title":"Openstack","path":"2023/12/01/Openstack/"},{"title":"安装openstack服务","path":"2023/12/02/Openstack3/"},{"title":"Openstack配置控制节点与计算节点","path":"2023/12/01/Openstack1/"},{"title":"Openstack编辑环境变量","path":"2023/12/02/Openstack2/"},{"title":"Openstack之安装数据库服务","path":"2023/12/02/Openstack4/"}]`)
+  const posts = JSON.parse(`[{"title":"Openstack","path":"2023/12/01/Openstack/"},{"title":"安装openstack服务","path":"2023/12/02/Openstack3/"},{"title":"Openstack配置控制节点与计算节点","path":"2023/12/01/Openstack1/"},{"title":"Openstack编辑环境变量","path":"2023/12/02/Openstack2/"},{"title":"Openstack之安装数据库服务","path":"2023/12/02/Openstack4/"},{"title":"Openstack之安装memcahce服务与etcd服务","path":"2023/12/02/Openstack5/"}]`)
   ipt.addEventListener('keyup', e => {
     if (e.key === 'Enter') {
       handleSearch()
@@ -302,7 +302,7 @@
       </h5>
       <p class="main-left--subtitle">
         <span>文章数目：</span>
-        <span>5 篇</span>
+        <span>6 篇</span>
       </p>
       <p class="main-left--subtitle">
         <span>最近动态：</span>
@@ -348,7 +348,8 @@
       </div>
     </div>
     <article class="article-content markdown-body">
-      <h2 id="OpenStack-简介"><a href="#OpenStack-简介" class="headerlink" title="OpenStack 简介"></a>OpenStack 简介</h2><p> OpenStack 是一个开源的云计算平台，旨在提供可扩展性、弹性和高性能的云服务。它由一系列相互关联的项目组成，每个项目都负责不同的云计算服务。</p>
+      <p><img src="https://cdn.jsdelivr.net/gh/waitingwindzzzz/photos/images/1701523910811.jpg"></p>
+<h2 id="OpenStack-简介"><a href="#OpenStack-简介" class="headerlink" title="OpenStack 简介"></a>OpenStack 简介</h2><p> OpenStack 是一个开源的云计算平台，旨在提供可扩展性、弹性和高性能的云服务。它由一系列相互关联的项目组成，每个项目都负责不同的云计算服务。</p>
 <h2 id="核心组件"><a href="#核心组件" class="headerlink" title="核心组件"></a>核心组件</h2><ol>
 <li><strong>Nova</strong>：计算服务，用于管理和调度虚拟机实例。</li>
 <li><strong>Swift</strong>：对象存储服务，提供可扩展的对象存储平台。</li>

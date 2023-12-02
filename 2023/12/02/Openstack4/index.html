@@ -175,7 +175,7 @@
   const ipt = document.querySelector('#search-input')
   const btn = document.querySelector('#search-btn')
   const layer = document.querySelector('#search-layer')
-  const posts = JSON.parse(`[{"title":"Openstack","path":"2023/12/01/Openstack/"},{"title":"安装openstack服务","path":"2023/12/02/Openstack3/"},{"title":"Openstack配置控制节点与计算节点","path":"2023/12/01/Openstack1/"},{"title":"Openstack编辑环境变量","path":"2023/12/02/Openstack2/"},{"title":"Openstack之安装数据库服务","path":"2023/12/02/Openstack4/"}]`)
+  const posts = JSON.parse(`[{"title":"Openstack","path":"2023/12/01/Openstack/"},{"title":"安装openstack服务","path":"2023/12/02/Openstack3/"},{"title":"Openstack配置控制节点与计算节点","path":"2023/12/01/Openstack1/"},{"title":"Openstack编辑环境变量","path":"2023/12/02/Openstack2/"},{"title":"Openstack之安装数据库服务","path":"2023/12/02/Openstack4/"},{"title":"Openstack之安装memcahce服务与etcd服务","path":"2023/12/02/Openstack5/"}]`)
   ipt.addEventListener('keyup', e => {
     if (e.key === 'Enter') {
       handleSearch()
@@ -302,7 +302,7 @@
       </h5>
       <p class="main-left--subtitle">
         <span>文章数目：</span>
-        <span>5 篇</span>
+        <span>6 篇</span>
       </p>
       <p class="main-left--subtitle">
         <span>最近动态：</span>
@@ -348,7 +348,8 @@
       </div>
     </div>
     <article class="article-content markdown-body">
-      <h1 id="安装数据库服务"><a href="#安装数据库服务" class="headerlink" title="安装数据库服务"></a>安装数据库服务</h1><h2 id="下列基础服务操作命令已编写成shell脚本可通过脚本一键安装"><a href="#下列基础服务操作命令已编写成shell脚本可通过脚本一键安装" class="headerlink" title="下列基础服务操作命令已编写成shell脚本可通过脚本一键安装"></a>下列基础服务操作命令已编写成shell脚本可通过脚本一键安装</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Controller节点</span><br><span class="line">执行脚本iaas-install-mysql.sh进行安装</span><br></pre></td></tr></table></figure>
+      <p><img src="https://cdn.jsdelivr.net/gh/waitingwindzzzz/photos/images/1701523910811.jpg"></p>
+<h1 id="安装数据库服务"><a href="#安装数据库服务" class="headerlink" title="安装数据库服务"></a>安装数据库服务</h1><h2 id="下列基础服务操作命令已编写成shell脚本可通过脚本一键安装"><a href="#下列基础服务操作命令已编写成shell脚本可通过脚本一键安装" class="headerlink" title="下列基础服务操作命令已编写成shell脚本可通过脚本一键安装"></a>下列基础服务操作命令已编写成shell脚本可通过脚本一键安装</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Controller节点</span><br><span class="line">执行脚本iaas-install-mysql.sh进行安装</span><br></pre></td></tr></table></figure>
 
 <h1 id="安装Mysql数据库服务"><a href="#安装Mysql数据库服务" class="headerlink" title="安装Mysql数据库服务"></a>安装Mysql数据库服务</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install -y mariadb mariadb-server python2-PyMySQL</span><br></pre></td></tr></table></figure>
 <h2 id="修改mysql配置文件参数"><a href="#修改mysql配置文件参数" class="headerlink" title="修改mysql配置文件参数"></a>修改mysql配置文件参数</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">修改 /etc/my.cnf文件[mysqld]中添加</span><br><span class="line">max_connections=10000</span><br><span class="line">default-storage-engine = innodb</span><br><span class="line">innodb_file_per_table</span><br><span class="line">collation-server = utf8_general_ci</span><br><span class="line">init-connect = <span class="string">&#x27;SET NAMES utf8&#x27;</span></span><br><span class="line">character-set-server = utf8</span><br></pre></td></tr></table></figure>
@@ -385,6 +386,11 @@
       </div>
       
         <div class="catelogue catelogue-2">
+          
+            <p>
+              <span>上一篇：</span>
+              <a href="/2023/12/02/Openstack5/">Openstack之安装memcahce服务与etcd服务</a>
+            </p>
            
           
             <p>

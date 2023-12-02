@@ -175,7 +175,7 @@
   const ipt = document.querySelector('#search-input')
   const btn = document.querySelector('#search-btn')
   const layer = document.querySelector('#search-layer')
-  const posts = JSON.parse(`[{"title":"Openstack","path":"2023/12/01/Openstack/"},{"title":"安装openstack服务","path":"2023/12/02/Openstack3/"},{"title":"Openstack配置控制节点与计算节点","path":"2023/12/01/Openstack1/"},{"title":"Openstack编辑环境变量","path":"2023/12/02/Openstack2/"},{"title":"Openstack之安装数据库服务","path":"2023/12/02/Openstack4/"}]`)
+  const posts = JSON.parse(`[{"title":"Openstack","path":"2023/12/01/Openstack/"},{"title":"安装openstack服务","path":"2023/12/02/Openstack3/"},{"title":"Openstack配置控制节点与计算节点","path":"2023/12/01/Openstack1/"},{"title":"Openstack编辑环境变量","path":"2023/12/02/Openstack2/"},{"title":"Openstack之安装数据库服务","path":"2023/12/02/Openstack4/"},{"title":"Openstack之安装memcahce服务与etcd服务","path":"2023/12/02/Openstack5/"}]`)
   ipt.addEventListener('keyup', e => {
     if (e.key === 'Enter') {
       handleSearch()
@@ -302,7 +302,7 @@
       </h5>
       <p class="main-left--subtitle">
         <span>文章数目：</span>
-        <span>5 篇</span>
+        <span>6 篇</span>
       </p>
       <p class="main-left--subtitle">
         <span>最近动态：</span>
@@ -333,10 +333,10 @@
       <div class="index-article">
         <!-- <img class="index-article--cover" src="/imgs/default-cover.webp" alt=""> -->
         <div class="index-article--box">
-          <img class="index-article--cover" data-cover="imgs/default-cover.webp" alt="Openstack之安装数据库服务" />
+          <img class="index-article--cover" data-cover="imgs/default-cover.webp" alt="Openstack之安装memcahce服务与etcd服务" />
         </div>
         <div class="index-article--content">
-          <a href="/2023/12/02/Openstack4/">Openstack之安装数据库服务 </a>
+          <a href="/2023/12/02/Openstack5/">Openstack之安装memcahce服务与etcd服务 </a>
           <div>
             
             
@@ -347,39 +347,6 @@
     
       <div class="index-article">
         <!-- <img class="index-article--cover" src="/imgs/default-cover.webp" alt=""> -->
-        <div class="index-article--box">
-          <img class="index-article--cover" data-cover="imgs/default-cover.webp" alt="Openstack编辑环境变量" />
-        </div>
-        <div class="index-article--content">
-          <a href="/2023/12/02/Openstack2/">Openstack编辑环境变量 </a>
-          <div>
-            
-            
-          </div>
-          <div class="bg"></div>
-        </div>
-      </div>
-    
-      <div class="index-article">
-        <!-- <img class="index-article--cover" src="/imgs/default-cover.webp" alt=""> -->
-        <div class="index-article--box">
-          <img class="index-article--cover" data-cover="imgs/default-cover.webp" alt="Openstack" />
-        </div>
-        <div class="index-article--content">
-          <a href="/2023/12/01/Openstack/">Openstack </a>
-          <div>
-            
-            
-          </div>
-          <div class="bg"></div>
-        </div>
-      </div>
-    
-  </div>
-  <div class="index-center">
-    
-      <div class="index-article">
-        <!-- <img class="index-article--cover" data-cover="" src="/imgs/default-cover.webp" alt=""> -->
         <div class="index-article--box">
           <img class="index-article--cover" data-cover="imgs/default-cover.webp" alt="安装openstack服务" />
         </div>
@@ -394,7 +361,7 @@
       </div>
     
       <div class="index-article">
-        <!-- <img class="index-article--cover" data-cover="" src="/imgs/default-cover.webp" alt=""> -->
+        <!-- <img class="index-article--cover" src="/imgs/default-cover.webp" alt=""> -->
         <div class="index-article--box">
           <img class="index-article--cover" data-cover="imgs/default-cover.webp" alt="Openstack配置控制节点与计算节点" />
         </div>
@@ -409,11 +376,59 @@
       </div>
     
   </div>
+  <div class="index-center">
+    
+      <div class="index-article">
+        <!-- <img class="index-article--cover" data-cover="" src="/imgs/default-cover.webp" alt=""> -->
+        <div class="index-article--box">
+          <img class="index-article--cover" data-cover="imgs/default-cover.webp" alt="Openstack之安装数据库服务" />
+        </div>
+        <div class="index-article--content">
+          <a href="/2023/12/02/Openstack4/">Openstack之安装数据库服务 </a>
+          <div>
+            
+            
+          </div>
+          <div class="bg"></div>
+        </div>
+      </div>
+    
+      <div class="index-article">
+        <!-- <img class="index-article--cover" data-cover="" src="/imgs/default-cover.webp" alt=""> -->
+        <div class="index-article--box">
+          <img class="index-article--cover" data-cover="imgs/default-cover.webp" alt="Openstack编辑环境变量" />
+        </div>
+        <div class="index-article--content">
+          <a href="/2023/12/02/Openstack2/">Openstack编辑环境变量 </a>
+          <div>
+            
+            
+          </div>
+          <div class="bg"></div>
+        </div>
+      </div>
+    
+      <div class="index-article">
+        <!-- <img class="index-article--cover" data-cover="" src="/imgs/default-cover.webp" alt=""> -->
+        <div class="index-article--box">
+          <img class="index-article--cover" data-cover="imgs/default-cover.webp" alt="Openstack" />
+        </div>
+        <div class="index-article--content">
+          <a href="/2023/12/01/Openstack/">Openstack </a>
+          <div>
+            
+            
+          </div>
+          <div class="bg"></div>
+        </div>
+      </div>
+    
+  </div>
   <div class="index-right">
     <div class="index-right-wrapper">
       
       
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/12/">2023年12月</a><span class="archive-list-count">5</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/12/">2023年12月</a><span class="archive-list-count">6</span></li></ul>
     </div>
   </div>
 </div>

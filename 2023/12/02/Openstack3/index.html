@@ -175,7 +175,7 @@
   const ipt = document.querySelector('#search-input')
   const btn = document.querySelector('#search-btn')
   const layer = document.querySelector('#search-layer')
-  const posts = JSON.parse(`[{"title":"Openstack","path":"2023/12/01/Openstack/"},{"title":"安装openstack服务","path":"2023/12/02/Openstack3/"},{"title":"Openstack配置控制节点与计算节点","path":"2023/12/01/Openstack1/"},{"title":"Openstack编辑环境变量","path":"2023/12/02/Openstack2/"},{"title":"Openstack之安装数据库服务","path":"2023/12/02/Openstack4/"}]`)
+  const posts = JSON.parse(`[{"title":"Openstack","path":"2023/12/01/Openstack/"},{"title":"安装openstack服务","path":"2023/12/02/Openstack3/"},{"title":"Openstack配置控制节点与计算节点","path":"2023/12/01/Openstack1/"},{"title":"Openstack编辑环境变量","path":"2023/12/02/Openstack2/"},{"title":"Openstack之安装数据库服务","path":"2023/12/02/Openstack4/"},{"title":"Openstack之安装memcahce服务与etcd服务","path":"2023/12/02/Openstack5/"}]`)
   ipt.addEventListener('keyup', e => {
     if (e.key === 'Enter') {
       handleSearch()
@@ -302,7 +302,7 @@
       </h5>
       <p class="main-left--subtitle">
         <span>文章数目：</span>
-        <span>5 篇</span>
+        <span>6 篇</span>
       </p>
       <p class="main-left--subtitle">
         <span>最近动态：</span>
@@ -348,7 +348,8 @@
       </div>
     </div>
     <article class="article-content markdown-body">
-      <h1 id="在Controller和Compute节点可以通过脚本安装"><a href="#在Controller和Compute节点可以通过脚本安装" class="headerlink" title="在Controller和Compute节点可以通过脚本安装"></a>在Controller和Compute节点可以通过脚本安装</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">iaas-pre-host.sh</span><br><span class="line">reboot</span><br></pre></td></tr></table></figure>
+      <p><img src="https://cdn.jsdelivr.net/gh/waitingwindzzzz/photos/images/1701523910811.jpg"></p>
+<h1 id="在Controller和Compute节点可以通过脚本安装"><a href="#在Controller和Compute节点可以通过脚本安装" class="headerlink" title="在Controller和Compute节点可以通过脚本安装"></a>在Controller和Compute节点可以通过脚本安装</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">iaas-pre-host.sh</span><br><span class="line">reboot</span><br></pre></td></tr></table></figure>
 <h1 id="脚本安装虽然有很多便利，但会遇到很多莫名其妙的问题"><a href="#脚本安装虽然有很多便利，但会遇到很多莫名其妙的问题" class="headerlink" title="脚本安装虽然有很多便利，但会遇到很多莫名其妙的问题"></a>脚本安装虽然有很多便利，但会遇到很多莫名其妙的问题</h1><h1 id="本文同样提供分步安装方法"><a href="#本文同样提供分步安装方法" class="headerlink" title="本文同样提供分步安装方法"></a>本文同样提供分步安装方法</h1><h2 id="controller-和-compute"><a href="#controller-和-compute" class="headerlink" title="controller 和 compute"></a>controller 和 compute</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">yum-y install openstack-utils openstack-selinux python-openstackclient</span><br><span class="line">yum upgrade</span><br></pre></td></tr></table></figure>
 <h2 id="配置域名解析"><a href="#配置域名解析" class="headerlink" title="配置域名解析"></a>配置域名解析</h2><p>   修改&#x2F;etc&#x2F;hosts 添加内容<br>    controller&#x2F;compute节点<br>   <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">192.168.100.10 controller</span><br><span class="line">192.168.100.20 compute</span><br></pre></td></tr></table></figure></p>
 <h2 id="安装chrony服务"><a href="#安装chrony服务" class="headerlink" title="安装chrony服务"></a>安装chrony服务</h2><pre><code class="ini">（1）controller和compute节点
