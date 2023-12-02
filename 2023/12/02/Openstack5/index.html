@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   
-  <title>我的技术与生活——Openstack之安装memcahce服务与etcd服务 | 情情的直觉&#39;s Blog</title>
+  <title>我的技术与生活——Openstack之安装memcahce服务与etcd服务 | </title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="shortcut icon" href="/imgs/shortcut-icon.ico" type="image/x-icon">
   <link rel="stylesheet" href="/css/public.css" />
@@ -352,6 +352,9 @@
 <h1 id="安装memcahce服务"><a href="#安装memcahce服务" class="headerlink" title="安装memcahce服务"></a>安装memcahce服务</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">yum install memcached python-memcached</span><br><span class="line">systemctl <span class="built_in">enable</span> memcached.service</span><br><span class="line">systemctl restart memcached.service</span><br></pre></td></tr></table></figure>
 <h1 id="安装etcd服务"><a href="#安装etcd服务" class="headerlink" title="安装etcd服务"></a>安装etcd服务</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install etcd –y</span><br></pre></td></tr></table></figure>
 <h2 id="修改-etc-etcd-etcd-conf配置文件，添加以下内容："><a href="#修改-etc-etcd-etcd-conf配置文件，添加以下内容：" class="headerlink" title="修改&#x2F;etc&#x2F;etcd&#x2F;etcd.conf配置文件，添加以下内容："></a>修改&#x2F;etc&#x2F;etcd&#x2F;etcd.conf配置文件，添加以下内容：</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ETCD_LISTEN_PEER_URLS=<span class="string">&quot;http://192.168.100.10:2380&quot;</span></span><br><span class="line">ETCD_LISTEN_CLIENT_URLS=<span class="string">&quot;http://192.168.100.10:2379&quot;</span></span><br><span class="line">ETCD_NAME=<span class="string">&quot;controller&quot;</span></span><br></pre></td></tr></table></figure>
+<h1 id="启动服务"><a href="#启动服务" class="headerlink" title="启动服务"></a>启动服务</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">systemctl start etcd</span><br><span class="line">systemctl <span class="built_in">enable</span> etcd</span><br></pre></td></tr></table></figure>
+
+
 
     </article>
     
@@ -373,7 +376,7 @@
     <div class="article-catelogue--wrapper">
       <div class="catelogue catelogue-1">
         <h3>目录</h3>
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AE%89%E8%A3%85memcahce%E6%9C%8D%E5%8A%A1"><span class="toc-number">1.</span> <span class="toc-text">安装memcahce服务</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AE%89%E8%A3%85etcd%E6%9C%8D%E5%8A%A1"><span class="toc-number">2.</span> <span class="toc-text">安装etcd服务</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BF%AE%E6%94%B9-etc-etcd-etcd-conf%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%EF%BC%8C%E6%B7%BB%E5%8A%A0%E4%BB%A5%E4%B8%8B%E5%86%85%E5%AE%B9%EF%BC%9A"><span class="toc-number">2.1.</span> <span class="toc-text">修改&#x2F;etc&#x2F;etcd&#x2F;etcd.conf配置文件，添加以下内容：</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AE%89%E8%A3%85memcahce%E6%9C%8D%E5%8A%A1"><span class="toc-number">1.</span> <span class="toc-text">安装memcahce服务</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AE%89%E8%A3%85etcd%E6%9C%8D%E5%8A%A1"><span class="toc-number">2.</span> <span class="toc-text">安装etcd服务</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BF%AE%E6%94%B9-etc-etcd-etcd-conf%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%EF%BC%8C%E6%B7%BB%E5%8A%A0%E4%BB%A5%E4%B8%8B%E5%86%85%E5%AE%B9%EF%BC%9A"><span class="toc-number">2.1.</span> <span class="toc-text">修改&#x2F;etc&#x2F;etcd&#x2F;etcd.conf配置文件，添加以下内容：</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%90%AF%E5%8A%A8%E6%9C%8D%E5%8A%A1"><span class="toc-number">3.</span> <span class="toc-text">启动服务</span></a></li></ol>
       </div>
       
         <div class="catelogue catelogue-2">
