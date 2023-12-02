@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   
-  <title>我的技术与生活——Openstack编辑环境变量 | 情情的直觉&#39;s Blog</title>
+  <title>我的技术与生活——天天开心 | 情情的直觉&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="shortcut icon" href="/imgs/shortcut-icon.ico" type="image/x-icon">
   <link rel="stylesheet" href="/css/public.css" />
@@ -16,7 +16,7 @@
 
   <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
   <script>
-    document.title = `我的技术与生活——Openstack编辑环境变量`
+    document.title = `我的技术与生活——天天开心`
   </script>
 <meta name="generator" content="Hexo 7.0.0"></head>
 
@@ -326,7 +326,7 @@
 
 <div class="article-container">
   <div class="article">
-    <h1 class="article-title">Openstack编辑环境变量</h1>
+    <h1 class="article-title">天天开心</h1>
     <div class="article-info">
       <div class="article-info--item">
         <div class="article-info--info">
@@ -342,19 +342,18 @@
             
           </div>
           
-          <p class="article-info--date">日期：2023-12-02 10:55:09</p>
+          <p class="article-info--date">日期：2023-12-02 16:44:30</p>
         </div>
         <img src="/imgs/default-cover.webp" alt="" class="article-cover">
       </div>
     </div>
     <article class="article-content markdown-body">
-      <h1 id="Controller和Compute节点"><a href="#Controller和Compute节点" class="headerlink" title="Controller和Compute节点"></a>Controller和Compute节点</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install iaas-xiandian -y</span><br></pre></td></tr></table></figure>
-<h2 id="编辑文件-etc-xiandian-openrc-sh"><a href="#编辑文件-etc-xiandian-openrc-sh" class="headerlink" title="编辑文件 &#x2F;etc&#x2F;xiandian&#x2F;openrc.sh."></a>编辑文件 &#x2F;etc&#x2F;xiandian&#x2F;openrc.sh.</h2><h2 id="此文件是安装过程中的各项参数，根据每项参数上一行的说明以及服务器的实际情况配置"><a href="#此文件是安装过程中的各项参数，根据每项参数上一行的说明以及服务器的实际情况配置" class="headerlink" title="此文件是安装过程中的各项参数，根据每项参数上一行的说明以及服务器的实际情况配置"></a>此文件是安装过程中的各项参数，根据每项参数上一行的说明以及服务器的实际情况配置</h2><figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">HOST_IP</span>=<span class="number">192.168</span>.<span class="number">100.10</span></span><br><span class="line"><span class="attr">HOST_PASS</span>=<span class="number">000000</span></span><br><span class="line"><span class="attr">HOST_NAME</span>=controller</span><br><span class="line"><span class="attr">HOST_IP_NODE</span>=<span class="number">192.168</span>.<span class="number">100.20</span></span><br><span class="line"><span class="attr">HOST_PASS_NODE</span>=<span class="number">000000</span></span><br><span class="line"><span class="attr">HOST_NAME_NODE</span>=compute</span><br><span class="line"><span class="attr">network_segment_IP</span>=<span class="number">192.168</span>.<span class="number">100.0</span>/<span class="number">24</span></span><br><span class="line"><span class="attr">RABBIT_USER</span>=openstack</span><br><span class="line"><span class="attr">RABBIT_PASS</span>=<span class="number">000000</span></span><br><span class="line"><span class="attr">DB_PASS</span>=<span class="number">000000</span></span><br><span class="line"><span class="attr">DOMAIN_NAME</span>=demo</span><br><span class="line"><span class="attr">ADMIN_PASS</span>=<span class="number">000000</span></span><br><span class="line"><span class="attr">DEMO_PASS</span>=<span class="number">000000</span></span><br><span class="line"><span class="attr">KEYSTONE_DBPASS</span>=<span class="number">000000</span></span><br><span class="line"><span class="attr">GLANCE_DBPASS</span>=<span class="number">000000</span></span><br><span class="line"><span class="attr">GLANCE_PASS</span>=<span class="number">000000</span></span><br><span class="line"><span class="attr">NOVA_DBPASS</span>=<span class="number">000000</span></span><br><span class="line"><span class="attr">NOVA_PASS</span>=<span class="number">000000</span></span><br><span class="line"><span class="attr">NEUTRON_DBPASS</span>=<span class="number">000000</span></span><br><span class="line"><span class="attr">NEUTRON_PASS</span>=<span class="number">000000</span></span><br><span class="line"><span class="attr">METADATA_SECRET</span>=<span class="number">000000</span></span><br><span class="line"><span class="attr">INTERFACE_IP</span>=<span class="number">192.168</span>.<span class="number">100.10</span>/<span class="number">192.168</span>.<span class="number">100.20</span>（controllerIP/computeIP）</span><br><span class="line"><span class="attr">INTERFACE_NAME</span>=enp9s0 （外部网络网卡名称）</span><br><span class="line"><span class="attr">Physical_NAME</span>=provider （外部网络适配器名称）</span><br><span class="line"><span class="attr">minvlan</span>=<span class="number">101</span> （vlan网络范围的第一个vlanID）</span><br><span class="line"><span class="attr">maxvlan</span>=<span class="number">200</span> （vlan网络范围的最后一个vlanID）</span><br><span class="line"><span class="attr">CINDER_DBPASS</span>=<span class="number">000000</span></span><br><span class="line"><span class="attr">CINDER_PASS</span>=<span class="number">000000</span></span><br><span class="line"><span class="attr">BLOCK_DISK</span>=md126p4 （空白分区）</span><br><span class="line"><span class="attr">SWIFT_PASS</span>=<span class="number">000000</span></span><br><span class="line"><span class="attr">OBJECT_DISK</span>=md126p5 （空白分区）</span><br><span class="line"><span class="attr">STORAGE_LOCAL_NET_IP</span>=<span class="number">192.168</span>.<span class="number">100.20</span></span><br><span class="line"><span class="attr">HEAT_DBPASS</span>=<span class="number">000000</span></span><br><span class="line"><span class="attr">HEAT_PASS</span>=<span class="number">000000</span></span><br><span class="line"><span class="attr">ZUN_DBPASS</span>=<span class="number">000000</span></span><br><span class="line"><span class="attr">ZUN_PASS</span>=<span class="number">000000</span></span><br><span class="line"><span class="attr">KURYR_DBPASS</span>=<span class="number">000000</span></span><br><span class="line"><span class="attr">KURYR_PASS</span>=<span class="number">000000</span></span><br><span class="line"><span class="attr">CEILOMETER_DBPASS</span>=<span class="number">000000</span></span><br><span class="line"><span class="attr">CEILOMETER_PASS</span>=<span class="number">000000</span></span><br><span class="line"><span class="attr">AODH_DBPASS</span>=<span class="number">000000</span></span><br><span class="line"><span class="attr">AODH_PASS</span>=<span class="number">000000</span></span><br></pre></td></tr></table></figure>
+      
     </article>
     
     <div class="read-nums">
       <!-- id 将作为查询条件 -->
-      <span id="2023/12/02/Openstack2/" class="leancloud_visitors" data-flag-title="Your Article Title">
+      <span id="2023/12/02/Openstack4/" class="leancloud_visitors" data-flag-title="Your Article Title">
         <em class="post-meta-item-text">浏览量</em>
         <i class="leancloud-visitors-count"></i>
       </span>
@@ -370,20 +369,15 @@
     <div class="article-catelogue--wrapper">
       <div class="catelogue catelogue-1">
         <h3>目录</h3>
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Controller%E5%92%8CCompute%E8%8A%82%E7%82%B9"><span class="toc-number">1.</span> <span class="toc-text">Controller和Compute节点</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BC%96%E8%BE%91%E6%96%87%E4%BB%B6-etc-xiandian-openrc-sh"><span class="toc-number">1.1.</span> <span class="toc-text">编辑文件 &#x2F;etc&#x2F;xiandian&#x2F;openrc.sh.</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%AD%A4%E6%96%87%E4%BB%B6%E6%98%AF%E5%AE%89%E8%A3%85%E8%BF%87%E7%A8%8B%E4%B8%AD%E7%9A%84%E5%90%84%E9%A1%B9%E5%8F%82%E6%95%B0%EF%BC%8C%E6%A0%B9%E6%8D%AE%E6%AF%8F%E9%A1%B9%E5%8F%82%E6%95%B0%E4%B8%8A%E4%B8%80%E8%A1%8C%E7%9A%84%E8%AF%B4%E6%98%8E%E4%BB%A5%E5%8F%8A%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%9A%84%E5%AE%9E%E9%99%85%E6%83%85%E5%86%B5%E9%85%8D%E7%BD%AE"><span class="toc-number">1.2.</span> <span class="toc-text">此文件是安装过程中的各项参数，根据每项参数上一行的说明以及服务器的实际情况配置</span></a></li></ol></li></ol>
+        
       </div>
       
         <div class="catelogue catelogue-2">
-          
-            <p>
-              <span>上一篇：</span>
-              <a href="/2023/12/02/Openstack3/">安装openstack服务</a>
-            </p>
            
           
             <p>
               <span>下一篇</span>
-              <a href="/2023/12/01/Openstack1/">Openstack配置控制节点与计算节点</a>
+              <a href="/2023/12/02/Openstack3/">安装openstack服务</a>
             </p>
           
         </div>
@@ -405,7 +399,7 @@
     recordIP: config.recordIP,
     visitor: config.visitor,
     enableQQ: config.enableQQ,
-    path: '2023/12/02/Openstack2/'
+    path: '2023/12/02/Openstack4/'
   })
 </script>
 
